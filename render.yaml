@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-web-service
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node app.js
+    envVars:
+      - key: NODE_VERSION
+        value: "20.16.0"
