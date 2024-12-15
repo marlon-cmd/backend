@@ -13,7 +13,12 @@ const app = express();
 
 app.use(bodyParser.json());
 const cors = require ('cors');
-app.use(cors());
+
+app.use(cors({
+    origin: '*',  // Or use '*' to allow all origins (not recommended for production)
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow the necessary HTTP methods
+    credentials: true,  // If you're using cookies with requests
+  }));
 
 
 app.get ('/', function(req, res){

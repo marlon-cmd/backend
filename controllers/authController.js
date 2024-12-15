@@ -32,7 +32,7 @@ const login = async (req, res) => {
         const [rows] = await pool.query('SELECT * FROM users WHERE username = ?', [username]);
 
         if (rows.length === 0) {
-            return res.status(400).json({ error: 'Invalid Useranme' });
+            return res.status(400).json({ error: 'Invalid Username' });
         }
 
         const user = rows[0];
